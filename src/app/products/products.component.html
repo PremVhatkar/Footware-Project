@@ -1,0 +1,75 @@
+<div id="page">
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="bread" style="font-size: medium;">
+                            <span><a href="index.html">Home</a></span> / <span>Products</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- ----------------------- Fetch Data --------------------- -->
+
+    <div class="row">
+        <section style="background-color: #eee;">
+            <div class="text-center container py-5">
+                <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
+                <div class="row">
+                    <div class="col-lg-4 mb-4" *ngFor="let prodcut of products">
+                        <div class="card p-2" style="height: 640px;">
+                            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                data-mdb-ripple-color="light">
+                                <a routerLink="/product/{{ prodcut.id }}"><img src="{{prodcut.image}}" style="width: 100%;" /></a>
+                            </div>
+                            <div class="card-body">
+                                <a class="text-reset">
+                                    <h5 class="card-title mb-3">{{prodcut.name}}</h5>
+                                </a>
+                                <a class="text-reset">
+                                    <p>{{prodcut.description}}</p>
+                                </a>
+                                <h6 class="mb-3">{{prodcut.price | currency:"INR"}}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+       <!-- ------------------------- End Data ------------------- -->
+
+
+
+
+
+
+
+        <!-- ------------ Pagination ------------------------ -->
+        <!-- 
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="block-27">
+            <ul>
+              <li>
+                <a href="#"><i class="ion-ios-arrow-back"></i></a>
+              </li>
+              <li class="active"><span>1</span></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#"><i class="ion-ios-arrow-forward"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

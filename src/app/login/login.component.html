@@ -1,0 +1,68 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form [formGroup]="logindata" (ngSubmit)="login(logindata.value)">
+                    <h1 class="text-center"><b>Login Form</b></h1>
+
+                    <!-- Email input -->
+                    <div class="form-floating p-2">
+                        <input type="text" name="username" formControlName="username" class="form-control"
+                            placeholder="Enter First Name" />
+                        <label><b>Username</b></label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-floating p-3">
+                        <input type="password" name="password" formControlName="password" class="form-control"
+                            placeholder="Enter First Name" />
+                        <label><b>Password</b></label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block pt-4">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- ------------------- My Form --------------------------- -->
+<!-- 
+<div class="row p-5">
+    <div class="col-lg-6 border border-dark rounded-5 bg-body-secondary mx-auto text-center"
+        style="height: 550px; align-content: center;">
+        <h1>Login Form</h1>
+        <br />
+
+        <form [formGroup]="logindata" (ngSubmit)="login(logindata.value)">
+
+            <div class="form-floating">
+                <input type="text" name="username" formControlName="username" class="form-control"
+                    placeholder="Enter First Name" />
+                <label>Username</label>
+            </div>
+            <br />
+            <div class="form-floating">
+                <input type="password" name="password" formControlName="password" class="form-control"
+                    placeholder="Enter First Name" />
+                <label>Password</label>
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+    </div>
+</div> -->

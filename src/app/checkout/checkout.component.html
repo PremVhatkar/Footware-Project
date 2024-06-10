@@ -1,0 +1,117 @@
+<div class="container">
+
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="bread"><span><a href="index.html">Home</a></span> / <span>Checkout</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="order" (ngSubmit)="placeorder(order.value)" method="post"
+        class="colorlib-form bg-body-secondary">
+
+        <div class="row bg-body-secondary">
+
+            <div class="col-lg-8">
+
+                <h2>Billing Details</h2>
+                <div class="row bg-body-secondary">
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>&nbsp;&nbsp;
+                            <input type="text" formControlName="name" class="form-control" placeholder="Your Full Name">
+                            <span class="text-danger" *ngIf="order.controls.name.touched && order.controls.name.invalid"><b>Please fill tha data ......</b></span>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="companyname">Town / City</label>
+                            <input type="text" formControlName="city" id="towncity" class="form-control"
+                                placeholder="Town or City">
+                            <span class="text-danger" *ngIf="order.controls.city.touched && order.controls.city.invalid"><b>Please fill tha data ......</b></span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Phone">Phone Number</label>
+                            <input type="number" formControlName="mobileno" id="zippostalcode" class="form-control"
+                                placeholder="Enter Mobile Numbr">
+                            <span class="text-danger" *ngIf="order.controls.mobileno.touched && order.controls.mobileno.invalid"><b>Please fill tha data ......</b></span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lname">Pin Code</label>
+                            <input type="text" formControlName="pincode" id="zippostalcode" class="form-control"
+                                placeholder="Zip / Postal">
+                            <span class="text-danger" *ngIf="order.controls.pincode.touched && order.controls.pincode.invalid"><b>Please fill tha data ......</b></span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">E-mail Address</label>
+                            <input type="text" formControlName="email" id="email" class="form-control"
+                                placeholder="State Province">
+                            <span class="text-danger" *ngIf="order.controls.email.touched && order.controls.email.invalid"><b>Please fill tha data ......</b></span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="cart-detail">
+                            <h2>Cart Total</h2>
+                            <ul>
+                                <li>
+                                    <span>Subtotal</span> <span>{{subtotal | currency:"INR"}}</span>
+                                    <ul>
+                                        <li *ngFor="let product of data"><span>{{product.quantity}} x
+                                                {{product.name}}</span> <span>{{product.quantity * product.price |
+                                                currency:"INR"}}</span></li>
+                                    </ul>
+                                </li>
+                                <li><span>Shipping</span> <span>{{0.00 | currency:"INR"}}</span></li>
+                                
+                                <li><span>Order Total</span> <span>{{subtotal | currency:"INR"}}</span></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <p><button class="btn btn-primary" type="submit" [disabled]="!order.valid" >Place an order</button></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
